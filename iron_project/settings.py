@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home.apps.HomeConfig'
+    'home.apps.HomeConfig',
+    'ROH.apps.RohConfig',
+    'sickline.apps.SicklineConfig',
+    'stores.apps.StoresConfig',
+    'yard.apps.YardConfig',
 ]
 
 MIDDLEWARE = [

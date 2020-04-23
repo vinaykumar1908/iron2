@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+
+
+{%block title%}
+<title>ROH</title>
+{%endblock title%}
+
+
+{%block content%}
+<table class="table table-bordered">
+        <thead>
+            <tr>
+            <th>Serial No</th>    
+            <th>Date</th>
+            <th>Truck Number</th>
+            <th>Number of BLC Wheels</th>
+            <th>Number of BCN Wheels</th>
+            <th>Number of ICF Wheels</th>
+            <th>Remark</th>
+            </tr>
+        </thead>
+        {%for object in object_list%}
+        <tbody>
+            <tr class='danger'>
+                <td class='text-primary'>{{object.id}}</td>
+                <td class='text-primary'>{{object.Date}}</td>
+                <td class='text-primary'>{{object.TruckNo}}</td>
+                <td class='text-primary'>{{object.BLC}}</td>
+                <td class='text-primary'>{{object.BCN}}</td>
+                <td class='text-primary'>{{object.ICF}}</td>
+                <td class='text-primary'>{{object.Remark}}</td>
+            </tr>
+        </tbody>
+        {%endfor%}
+</table>
+{%endblock content%}
+
+Date = models.DateTimeField(blank=True)
+    TruckNo = models.CharField(max_length=12)
+    BLC = models.IntegerField()
+    BCN = models.IntegerField()
+    ICF = models.IntegerField()
+    Remark
