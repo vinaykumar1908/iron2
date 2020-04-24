@@ -37,3 +37,11 @@ class registerHotAxle_Wagon(models.Model):
         return str(self.Date)
     def get_absolute_url(self):
         return reverse('HAWR')
+class registerGaugeCalibration(models.Model):
+    Description = models.CharField(max_length=50)
+    IMTENumber = models.CharField(max_length=15)
+    NextCalibrationDue = models.DateField()
+    def __str__(self):
+        return self.Description
+    def get_absolute_url(self):
+        return reverse('GC')

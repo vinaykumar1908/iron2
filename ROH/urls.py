@@ -19,4 +19,9 @@ urlpatterns = [
     path('register/HAWR/<int:pk>', views.registerHotAxleWagonDetailView.as_view(), name='HAWR_detail'),
     path('register/HAWR/<int:pk>/edit/', views.registerHotAxleWagonEditView.as_view(), name='HAWR_edit'),
     path('register/HAWR/<int:pk>/delete/', views.registerHotAxleWagonDeleteView.as_view(), name='HAWR_delete'),
+    path('register/GC/', views.registerGaugeCalibrationListView.as_view(), name='GC'),
+    path('register/GC/new/', views.registerGaugeCalibrationCreateView.as_view(), name='GC_new'),
+    path('register/GC/<int:pk>', views.registerGaugeCalibrationDetailView.as_view(), name='GC_detail'),
+    path('register/GC/<int:pk>/edit/', views.registerGaugeCalibrationEditView.as_view(), name='GC_edit'),
+    path('register/GC/<int:pk>/delete/', views.registerGaugeCalibrationDeleteView.as_view(), name='GC_delete'),
 ]
