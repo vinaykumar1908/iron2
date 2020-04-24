@@ -7,10 +7,15 @@
 
 
 {%block content%}
+
+<h1>Wheel Dispatched to JUDW</h1>
+<div> 
+    <a class="btn btn-success" href="{% url 'WDJudwR_new' %}"><h5> New Entry </h5></a> 
+    <a class="btn btn-success" href="{% url 'ROH_Register' %}"><h5> Back </h5></a>
+</div>
 <table class="table table-bordered">
         <thead>
-            <tr>
-            <th>Serial No</th>    
+            <tr>    
             <th>Date</th>
             <th>Truck Number</th>
             <th>Number of BLC Wheels</th>
@@ -22,8 +27,7 @@
         {%for object in object_list%}
         <tbody>
             <tr class='danger'>
-                <td class='text-primary'>{{object.id}}</td>
-                <td class='text-primary'>{{object.Date}}</td>
+                <td class='text-primary'><a href="{%url 'WDJudwR_detail' object.id %}">{{object.Date}}</a></td>
                 <td class='text-primary'>{{object.TruckNo}}</td>
                 <td class='text-primary'>{{object.BLC}}</td>
                 <td class='text-primary'>{{object.BCN}}</td>
@@ -35,9 +39,3 @@
 </table>
 {%endblock content%}
 
-Date = models.DateTimeField(blank=True)
-    TruckNo = models.CharField(max_length=12)
-    BLC = models.IntegerField()
-    BCN = models.IntegerField()
-    ICF = models.IntegerField()
-    Remark

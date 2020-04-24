@@ -37,11 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'home.apps.HomeConfig',
     'ROH.apps.RohConfig',
     'sickline.apps.SicklineConfig',
     'stores.apps.StoresConfig',
     'yard.apps.YardConfig',
+    'employee.apps.EmployeeConfig'
 ]
 
 MIDDLEWARE = [
@@ -115,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -129,3 +131,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS =[os.path.join(BASE_DIR, 'static')]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

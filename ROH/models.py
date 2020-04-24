@@ -1,8 +1,8 @@
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 class registerWheelRecievedJudw(models.Model):
-    Date = models.DateTimeField(blank=True)
+    Date = models.DateField(blank=True)
     TruckNo = models.CharField(max_length=12)
     BLC = models.IntegerField()
     BCN = models.IntegerField()
@@ -10,8 +10,10 @@ class registerWheelRecievedJudw(models.Model):
     Remark = models.TextField()
     def __str__(self):
         return str(self.Date)
+    def get_absolute_url(self):
+        return reverse('WRJudwR')
 class registerWheelDispatchedJudw(models.Model):
-    Date = models.DateTimeField(blank=True)
+    Date = models.DateField(blank=True)
     TruckNo = models.CharField(max_length=12)
     BLC = models.IntegerField()
     BCN = models.IntegerField()
@@ -19,6 +21,8 @@ class registerWheelDispatchedJudw(models.Model):
     Remark = models.TextField()
     def __str__(self):
         return str(self.Date)
+    def get_absolute_url(self):
+        return reverse('WDJudwR')
 class registerHotAxle_Wagon(models.Model):
     DateDetached = models.DateTimeField(blank=True)
     Station = models.CharField(max_length=5)

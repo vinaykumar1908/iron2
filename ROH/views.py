@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from . import models
+from django.urls import reverse_lazy
 # Create your views here.
 class HomePageView(TemplateView):
     template_name = 'ROH_home.html'
@@ -8,9 +10,61 @@ class HomePageView(TemplateView):
 class RegisterView(TemplateView):
     template_name = 'ROH/Registers.html'
 
+# Views for Wheel Recieved from Judw Register start
+
 class registerWheelRecievedJudwListView(ListView):
     model = models.registerWheelRecievedJudw
-    template_name = 'ROH/registerWheelRecievedJudw.html'
+    template_name = 'ROH/registerWheelRecievedJudw/registerWheelRecievedJudw.html'
+    ordering = ['-id']
+    paginate_by = 10
 
+class registerWheelRecievedJudwCreateView(CreateView):
+    model =  models.registerWheelRecievedJudw
+    template_name = 'ROH/registerWheelRecievedJudw/registerWheelRecievedJudw_new.html' 
+    fields = '__all__'
 
+class registerWheelRecievedJudwDetailView(DetailView): 
+    model = models.registerWheelRecievedJudw 
+    template_name = 'ROH/registerWheelRecievedJudw/registerWheelRecievedJudw_detail.html'
+
+class registerWheelRecievedJudwEditView(UpdateView): 
+    model = models.registerWheelRecievedJudw
+    fields = '__all__' 
+    template_name = 'ROH/registerWheelRecievedJudw/registerWheelRecievedJudw_edit.html'
+
+class registerWheelRecievedJudwDeleteView(DeleteView): 
+    model = models.registerWheelRecievedJudw 
+    template_name = 'ROH/registerWheelRecievedJudw/registerWheelRecievedJudw_delete.html' 
+    success_url = reverse_lazy('WRJudwR')
+
+# Views for Wheel Recieved from Judw Register end
+
+# Views for Wheel Dispatched from Judw Register start
+
+class registerWheelDispatchedJudwListView(ListView):
+    model = models.registerWheelDispatchedJudw
+    template_name = 'ROH/registerWheelDispatchedJudw/registerWheelDispatchedJudw.html'
+    ordering = ['-id']
+    paginate_by = 10
+
+class registerWheelDispatchedJudwCreateView(CreateView):
+    model =  models.registerWheelDispatchedJudw
+    template_name = 'ROH/registerWheelDispatchedJudw/registerWheelDispatchedJudw_new.html' 
+    fields = '__all__'
+
+class registerWheelDispatchedJudwDetailView(DetailView): 
+    model = models.registerWheelDispatchedJudw 
+    template_name = 'ROH/registerWheelDispatchedJudw/registerWheelDispatchedJudw_detail.html'
+
+class registerWheelDispatchedJudwEditView(UpdateView): 
+    model = models.registerWheelDispatchedJudw
+    fields = '__all__' 
+    template_name = 'ROH/registerWheelDispatchedJudw/registerWheelDispatchedJudw_edit.html'
+
+class registerWheelDispatchedJudwDeleteView(DeleteView): 
+    model = models.registerWheelDispatchedJudw 
+    template_name = 'ROH/registerWheelDispatchedJudw/registerWheelDispatchedJudw_delete.html' 
+    success_url = reverse_lazy('WDJudwR')
+
+# Views for Wheel Dispatched from Judw Register end
 

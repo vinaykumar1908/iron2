@@ -4,5 +4,14 @@ from . import views
 urlpatterns = [
     path('', views.HomePageView.as_view(), name='ROH_home' ),
     path('register/', views.RegisterView.as_view(), name='ROH_Register' ),
-    path('register/WRJudwR', views.registerWheelRecievedJudwListView.as_view(), name='WRJudwR')
+    path('register/WRJudwR/', views.registerWheelRecievedJudwListView.as_view(), name='WRJudwR'),
+    path('register/WRJudwR/new/', views.registerWheelRecievedJudwCreateView.as_view(), name='WRJudwR_new'),
+    path('register/WRJudwR/<int:pk>', views.registerWheelRecievedJudwDetailView.as_view(), name='WRJudwR_detail'),
+    path('register/WRJudwR/<int:pk>/edit/', views.registerWheelRecievedJudwEditView.as_view(), name='WRJudwR_edit'),
+    path('register/WRJudwR/<int:pk>/delete/', views.registerWheelRecievedJudwDeleteView.as_view(), name='WRJudwR_delete'),
+    path('register/WDJudwR/', views.registerWheelDispatchedJudwListView.as_view(), name='WDJudwR'),
+    path('register/WDJudwR/new/', views.registerWheelDispatchedJudwCreateView.as_view(), name='WDJudwR_new'),
+    path('register/WDJudwR/<int:pk>', views.registerWheelDispatchedJudwDetailView.as_view(), name='WDJudwR_detail'),
+    path('register/WDJudwR/<int:pk>/edit/', views.registerWheelDispatchedJudwEditView.as_view(), name='WDJudwR_edit'),
+    path('register/WDJudwR/<int:pk>/delete/', views.registerWheelDispatchedJudwDeleteView.as_view(), name='WDJudwR_delete'),
 ]
