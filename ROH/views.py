@@ -68,3 +68,30 @@ class registerWheelDispatchedJudwDeleteView(DeleteView):
 
 # Views for Wheel Dispatched from Judw Register end
 
+# Views for Hot Axle Wagon Register start
+class registerHotAxleWagonListView(ListView):
+    model = models.registerHotAxle_Wagon
+    template_name = 'ROH/registerHotAxleWagon/registerHotAxleWagon.html'
+    ordering = ['-id']
+    paginate_by = 10
+
+class registerHotAxleWagonCreateView(CreateView):
+    model =  models.registerHotAxle_Wagon
+    template_name = 'ROH/registerHotAxleWagon/registerHotAxleWagon_new.html' 
+    fields = '__all__'
+
+class registerHotAxleWagonDetailView(DetailView): 
+    model = models.registerHotAxle_Wagon 
+    template_name = 'ROH/registerHotAxleWagon/registerHotAxleWagon_detail.html'
+
+class registerHotAxleWagonEditView(UpdateView): 
+    model = models.registerHotAxle_Wagon
+    fields = '__all__' 
+    template_name = 'ROH/registerHotAxleWagon/registerHotAxleWagon_edit.html'
+
+class registerHotAxleWagonDeleteView(DeleteView): 
+    model = models.registerHotAxle_Wagon 
+    template_name = 'ROH/registerHotAxleWagon/registerHotAxleWagon_delete.html' 
+    success_url = reverse_lazy('HAWR')
+
+# Views for Hot Axle Wagon Register end

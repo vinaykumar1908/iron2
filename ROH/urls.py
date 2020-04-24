@@ -14,4 +14,9 @@ urlpatterns = [
     path('register/WDJudwR/<int:pk>', views.registerWheelDispatchedJudwDetailView.as_view(), name='WDJudwR_detail'),
     path('register/WDJudwR/<int:pk>/edit/', views.registerWheelDispatchedJudwEditView.as_view(), name='WDJudwR_edit'),
     path('register/WDJudwR/<int:pk>/delete/', views.registerWheelDispatchedJudwDeleteView.as_view(), name='WDJudwR_delete'),
+    path('register/HAWR/', views.registerHotAxleWagonListView.as_view(), name='HAWR'),
+    path('register/HAWR/new/', views.registerHotAxleWagonCreateView.as_view(), name='HAWR_new'),
+    path('register/HAWR/<int:pk>', views.registerHotAxleWagonDetailView.as_view(), name='HAWR_detail'),
+    path('register/HAWR/<int:pk>/edit/', views.registerHotAxleWagonEditView.as_view(), name='HAWR_edit'),
+    path('register/HAWR/<int:pk>/delete/', views.registerHotAxleWagonDeleteView.as_view(), name='HAWR_delete'),
 ]
