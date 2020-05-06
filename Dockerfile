@@ -9,7 +9,8 @@ COPY Pipfile Pipfile.lock /code/
 
 RUN pip install pipenv && pipenv install --system
 
-COPY . /code/
+COPY . .
 
-RUN python manage.py collectstatic 
+RUN python manage.py collectstatic --noinput
 
+CMD gunicorn iron_project.wsgi:application --bind 0.0.0.0:8000
