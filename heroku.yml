@@ -7,6 +7,5 @@ build:
 release:
     image: web 
     command:
-        - python manage.py runserver 0.0.0.0:8000 
 run:
     web: gunicorn iron_project.wsgi
