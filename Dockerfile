@@ -13,4 +13,4 @@ COPY . /code/
 
 RUN python manage.py collectstatic --noinput
 
-CMD gunicorn hello_django.wsgi:application --bind 0.0.0.0:8000
+CMD gunicorn iron_project.wsgi:application --bind 0.0.0.0:8000
