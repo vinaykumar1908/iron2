@@ -11,7 +11,6 @@ RUN pip install pipenv && pipenv install --system
 
 COPY . /code/
 
-RUN mkdir /code/static/
 
 
 
